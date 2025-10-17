@@ -29,7 +29,8 @@ jobs:
       - name: Build submodule
         run: |
           cd devchat-web
-          NODE_ENV=electron yarn build:electron
+          setx NODE_ENV electron
+          yarn build:electron
       - name: Install dependencies
         run: yarn
       - name: Build & publish Electron app

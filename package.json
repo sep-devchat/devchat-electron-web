@@ -1,12 +1,34 @@
 {
   "name": "devchat-web-electron",
-  "version": "1.0.0",
+  "productName": "DevChat",
+  "version": "0.0.1-alpha",
   "main": "src/main.js",
+  "description": "Dev Chat",
   "license": "MIT",
+  "author": "sep-devchat",
+  "repository": {
+    "type": "git",
+    "url": "github:sep-devchat/devchat-web-electron"
+  },
   "scripts": {
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "dependencies": {
+    "dockerode": "^4.0.9",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "^11.0.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron/fuses": "^1.0.0",
     "electron": "^38.3.0"
   }
 }

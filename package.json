@@ -18,7 +18,8 @@
   "dependencies": {
     "dockerode": "^4.0.9",
     "electron-squirrel-startup": "^1.0.1",
-    "electron-store": "^11.0.2"
+    "electron-store": "^11.0.2",
+    "update-electron-app": "^3.1.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.10.2",
@@ -28,6 +29,7 @@
     "@electron-forge/maker-zip": "^7.10.2",
     "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
     "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron-forge/publisher-github": "^7.10.2",
     "@electron/fuses": "^1.0.0",
     "electron": "^38.3.0"
   }

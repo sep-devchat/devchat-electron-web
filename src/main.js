@@ -1,3 +1,13 @@
+const { updateElectronApp, UpdateSourceType } = require("update-electron-app");
+
+updateElectronApp({
+  updateSource: {
+    type: UpdateSourceType.ElectronPublicUpdateService,
+    repo: "sep-devchat/devchat-web-electron",
+  },
+  updateInterval: "1 hour",
+});
+
 const { ipcMain } = require("electron");
 const { app, BrowserWindow } = require("electron/main");
 const path = require("path");

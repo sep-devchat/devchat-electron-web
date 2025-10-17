@@ -1,0 +1,3 @@
+[submodule "devchat-web"]
+	path = devchat-web
+	url = git@github.com:sep-devchat/devchat-web.git

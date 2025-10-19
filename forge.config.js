@@ -10,6 +10,7 @@ module.exports = {
         schemes: ["devchat"],
       },
     ],
+    icon: "icons/devchat-logo",
   },
   rebuildConfig: {},
   makers: [

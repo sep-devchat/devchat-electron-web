@@ -32,6 +32,8 @@ jobs:
           setx NODE_ENV production
           yarn build:electron
       - name: Install dependencies
-        run: yarn
+        run: |
+          choco install wixtoolset
+          yarn
       - name: Build & publish Electron app
         run: yarn run publish

@@ -1,3 +1,5 @@
+const path = require("path");
+
 function getIconPath() {
     const base = path.join(__dirname, "../..", "icons");
     if (process.platform === "win32") return path.join(base, "devchat-logo.ico");

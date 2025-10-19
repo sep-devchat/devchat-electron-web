@@ -1,4 +1,3 @@
-const { BrowserWindow } = require("electron");
 const { createWindow } = require("./window");
 
 let mainWindow = null;

@@ -1,15 +1,8 @@
 const { app, Menu, Tray, nativeImage, Notification } = require("electron");
-const path = require("path");
 const { getMainWindow, setMainWindow, createMainWindow, setForceQuit } = require("./state");
+const { getIconPath } = require("./utils");
 
 let tray = null; // keep a reference to avoid GC
-
-function getIconPath() {
-    const base = path.join(__dirname, "../..", "icons");
-    if (process.platform === "win32") return path.join(base, "devchat-logo.ico");
-    if (process.platform === "darwin") return path.join(base, "devchat-logo.icns");
-    return path.join(base, "devchat-logo.png");
-}
 
 function showApp() {
     let win = getMainWindow();
@@ -40,7 +33,6 @@ function createTray() {
             click: () => {
                 const notification = new Notification({
                     title: "Test Notification",
-                    subtitle: "This is a subtitle",
                     body: "This is a test notification",
                     icon: iconPath,
                 });

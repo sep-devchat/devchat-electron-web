@@ -1,14 +1,8 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
 const nativeAPINames = [
-  "makeHttpRequest",
   "openBrowserForLogin",
-  "storeRefreshToken",
-  "createAssetUrl",
-  "selectFileOrFolder",
-  "runCodeByFilePath",
-  "runCodeByContent",
-  "readFileContent",
+  "showMessageNotification",
 ];
 
 const api = {};

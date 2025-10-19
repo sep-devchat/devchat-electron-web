@@ -1,5 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
-const path = require("path");
+const { app, BrowserWindow } = require("electron");
 
 // Modules for separated concerns
 const { ensureSingleInstance, registerProtocol, onDeepLink, parseDeepLink, maybeHandleInitialDeepLink } = require("./protocol");

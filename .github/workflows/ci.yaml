@@ -31,7 +31,7 @@ jobs:
       - name: Build submodule
         run: |
           cd devchat-web
-          setx NODE_ENV production
+          set NODE_ENV production
           yarn build:electron
       - name: Install dependencies
         run: |

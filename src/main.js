@@ -1,5 +1,14 @@
-// App lifecycle orchestration: init -> run -> quit
-const { initApp, runApp, setupQuitHandlers } = require("./app/lifecycle");
+// App lifecycle orchestration: handleSquirrelEvent -> init -> run -> quit
+const {
+  handleSquirrelEvent,
+  initApp,
+  runApp,
+  setupQuitHandlers,
+} = require("./app/lifecycle");
+
+// Handle squirrel events immediately
+if (require("electron-squirrel-startup")) return;
+handleSquirrelEvent();
 
 // Register quit handlers immediately
 setupQuitHandlers();

@@ -1,5 +1,6 @@
 const { FusesPlugin } = require("@electron-forge/plugin-fuses");
 const { FuseV1Options, FuseVersion } = require("@electron/fuses");
+const path = require("path");
 
 module.exports = {
   packagerConfig: {
@@ -10,20 +11,13 @@ module.exports = {
         schemes: ["devchat"],
       },
     ],
-    icon: "icons/devchat-logo",
+    icon: path.join(__dirname, "icons/devchat-logo"),
   },
   rebuildConfig: {},
   makers: [
-    // {
-    //   name: "@electron-forge/maker-squirrel",
-    //   config: {},
-    // },
     {
-      name: '@electron-forge/maker-wix',
-      config: {
-        language: 1033,
-        manufacturer: 'DevChat',
-      }
+      name: "@electron-forge/maker-squirrel",
+      config: {},
     },
     {
       name: "@electron-forge/maker-zip",

@@ -58,6 +58,7 @@ function ensureSingleInstance() {
     const win = getMainWindow();
     if (win) {
       if (win.isMinimized()) win.restore();
+      win.show();
       win.focus();
     }
     // The commandLine is array of strings in which last element might be deep link url
@@ -75,4 +76,10 @@ function maybeHandleInitialDeepLink(argv = process.argv) {
   }
 }
 
-module.exports = { registerProtocol, parseDeepLink, onDeepLink, ensureSingleInstance, maybeHandleInitialDeepLink };
+module.exports = {
+  registerProtocol,
+  parseDeepLink,
+  onDeepLink,
+  ensureSingleInstance,
+  maybeHandleInitialDeepLink,
+};

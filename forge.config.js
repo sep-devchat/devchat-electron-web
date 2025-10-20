@@ -11,13 +11,15 @@ module.exports = {
         schemes: ["devchat"],
       },
     ],
-    icon: path.join(__dirname, "icons/devchat-logo"),
+    icon: path.join(__dirname, "images/icons/devchat-logo"),
   },
   rebuildConfig: {},
   makers: [
     {
       name: "@electron-forge/maker-squirrel",
-      config: {},
+      config: {
+        loadingGif: path.join(__dirname, "images/installing.gif"),
+      },
     },
     {
       name: "@electron-forge/maker-zip",

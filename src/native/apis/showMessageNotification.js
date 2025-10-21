@@ -7,10 +7,11 @@ const { getMainWindow } = require("../../app/state");
  * @param {*} title
  * @param {*} body
  */
-const showMessageNotification = (e, title, body) => {
+const showMessageNotification = (e, message) => {
   const notification = new Notification({
-    title: title,
-    body: body,
+    title: message.sender.firstName + " " + message.sender.lastName,
+    body: message.content || "You have a new message.",
+    icon: message.sender.avatarUrl,
   });
 
   notification.on("click", () => {
@@ -19,6 +20,10 @@ const showMessageNotification = (e, title, body) => {
       mainWindow.show();
       mainWindow.focus();
     }
+  });
+
+  notification.on("click", () => {
+    e.sender.send("notification-clicked", message);
   });
 
   notification.show();

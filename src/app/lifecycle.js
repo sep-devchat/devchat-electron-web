@@ -20,6 +20,7 @@ const createTray = require("./tray");
 
 // PHASE: INIT
 async function initApp() {
+  app.setAppUserModelId("devchat-web-electron");
   // updater first so it can check on boot
   setupAutoUpdater();
 

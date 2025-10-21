@@ -1,5 +1,5 @@
 const { Notification } = require("electron");
-const { getMainWindow } = require("../../app/state");
+const { showApp } = require("../../app/utils");
 
 /**
  *
@@ -15,14 +15,8 @@ const showMessageNotification = (e, message) => {
   });
 
   notification.on("click", () => {
-    const mainWindow = getMainWindow();
-    if (mainWindow) {
-      mainWindow.show();
-      mainWindow.focus();
-    }
-  });
+    showApp();
 
-  notification.on("click", () => {
     e.sender.send("notification-clicked", message);
   });
 
